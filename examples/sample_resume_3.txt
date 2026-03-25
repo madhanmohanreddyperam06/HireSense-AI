@@ -1,0 +1,56 @@
+Michael Rodriguez
+Email: michael.rodriguez@email.com
+Phone: (555) 456-7890
+LinkedIn: linkedin.com/in/michaelrodriguez
+
+PROFESSIONAL SUMMARY
+Software Developer with 3 years of experience transitioning into Machine Learning. Strong foundation in software engineering and growing expertise in ML technologies. Quick learner with passion for AI and data science.
+
+EXPERIENCE
+Software Developer | CloudSystems Inc. | 2021 - Present
+• Developed RESTful APIs for web applications using Python and Django
+• Worked with PostgreSQL and MongoDB databases
+• Implemented CI/CD pipelines using Jenkins and Docker
+• Collaborated with ML team to integrate models into production systems
+• Gained exposure to ML model deployment and monitoring
+
+Junior Developer | StartupHub | 2019 - 2021
+• Built web applications using React and Node.js
+• Developed database schemas and optimized queries
+• Participated in agile development processes
+• Contributed to open-source projects
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Texas at Austin | 2015 - 2019
+GPA: 3.4/4.0
+Online Courses: Machine Learning (Coursera), Deep Learning Specialization
+
+TECHNICAL SKILLS
+Programming: Python, JavaScript, Java, C++, SQL
+Web Development: React, Node.js, Django, Flask
+Databases: PostgreSQL, MongoDB, MySQL
+Cloud: AWS, Google Cloud Platform
+Tools: Git, Docker, Jenkins, JIRA
+Machine Learning: scikit-learn, TensorFlow (learning)
+
+PROJECTS
+• Movie Recommendation System - Collaborative filtering using Python
+• Image Classification App - CNN model for digit recognition
+• Weather Prediction Tool - Time series forecasting with LSTM
+• Personal Blog Platform - Full-stack web application
+
+ONLINE LEARNING
+• Andrew Ng's Machine Learning Course - Completed 2022
+• Deep Learning Specialization - In Progress
+• AWS Machine Learning Foundations - Completed 2023
+
+INTERESTS
+• Artificial Intelligence and Machine Learning
+• Competitive Programming
+• Open Source Contributions
+• Technical Writing
+
+LANGUAGES
+• English (Native)
+• Spanish (Fluent)

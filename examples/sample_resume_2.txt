@@ -1,0 +1,53 @@
+Sarah Chen
+Email: sarah.chen@email.com
+Phone: (555) 987-6543
+LinkedIn: linkedin.com/in/sarahchen
+
+PROFESSIONAL SUMMARY
+Machine Learning Engineer with 4 years of experience in developing scalable ML solutions. Strong background in data science, statistical modeling, and cloud computing. Passionate about building production-ready AI systems.
+
+EXPERIENCE
+ML Engineer | InnovateTech | 2020 - Present
+• Developed predictive models for customer churn analysis with 85% accuracy
+• Built data pipelines using Apache Spark for processing 1TB+ datasets
+• Implemented ML models in production using AWS SageMaker
+• Collaborated with product team to define ML requirements
+• Optimized model performance reducing latency by 25%
+
+Data Scientist | Analytics Pro | 2018 - 2020
+• Created statistical models for business forecasting
+• Analyzed large datasets using Python and SQL
+• Developed dashboards for business intelligence
+• Worked on A/B testing frameworks for product optimization
+
+EDUCATION
+Bachelor of Science in Statistics and Computer Science
+UC Berkeley | 2014 - 2018
+GPA: 3.6/4.0
+Relevant Coursework: Machine Learning, Deep Learning, Data Mining, Statistical Computing
+
+TECHNICAL SKILLS
+Programming: Python, R, SQL, JavaScript
+Machine Learning: scikit-learn, TensorFlow, PyTorch, XGBoost
+Data Science: pandas, numpy, matplotlib, seaborn
+Cloud: AWS, Google Cloud Platform
+Big Data: Spark, Hadoop
+Databases: PostgreSQL, MySQL, MongoDB
+Tools: Git, Docker, JIRA, Tableau
+
+PROJECTS
+• Customer Lifetime Value Prediction - ML model for business analytics
+• Social Media Sentiment Analysis - NLP pipeline for brand monitoring
+• Real-time Anomaly Detection - Statistical models for fraud detection
+
+CERTIFICATIONS
+• AWS Certified Data Analytics Specialty
+• Google Cloud Professional Data Engineer
+• IBM Data Science Professional Certificate
+
+SKILLS
+• Machine Learning: Supervised/Unsupervised Learning, Deep Learning, NLP
+• Programming: Python, R, SQL
+• Cloud Computing: AWS, GCP
+• Data Engineering: Spark, Hadoop, Airflow
+• Statistics: Statistical Modeling, Hypothesis Testing, A/B Testing

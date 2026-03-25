@@ -1,0 +1,52 @@
+John Anderson
+Email: john.anderson@email.com
+Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/johnanderson
+
+PROFESSIONAL SUMMARY
+Senior Machine Learning Engineer with 7 years of experience in developing and deploying production-level ML systems. Expertise in deep learning, NLP, and cloud platforms. Proven track record of leading ML projects from conception to deployment.
+
+EXPERIENCE
+Senior ML Engineer | TechCorp Inc. | 2019 - Present
+• Lead development of real-time recommendation system serving 10M+ users
+• Designed and implemented CNN models for image classification with 95% accuracy
+• Optimized ML pipelines reducing inference time by 40%
+• Mentored team of 5 junior engineers
+• Deployed models on AWS using Docker and Kubernetes
+
+ML Engineer | DataSoft Solutions | 2017 - 2019
+• Developed predictive maintenance models for industrial equipment
+• Implemented NLP pipelines for text classification
+• Worked with TensorFlow and PyTorch for model development
+• Collaborated with data science team on feature engineering
+
+EDUCATION
+Master of Science in Computer Science
+Stanford University | 2015 - 2017
+Thesis: "Deep Learning Approaches for Natural Language Understanding"
+
+Bachelor of Science in Computer Engineering
+MIT | 2011 - 2015
+GPA: 3.8/4.0
+
+TECHNICAL SKILLS
+Programming: Python, Java, C++, JavaScript, SQL
+Machine Learning: TensorFlow, PyTorch, scikit-learn, Keras, XGBoost
+Cloud Platforms: AWS, Azure, GCP
+Big Data: Spark, Hadoop, Kafka
+Databases: PostgreSQL, MongoDB, Redis
+Tools: Git, Docker, Kubernetes, Jenkins, JIRA, Confluence
+
+PROJECTS
+• Real-time Fraud Detection System - Reduced false positives by 30%
+• Customer Sentiment Analysis Tool - NLP pipeline for social media data
+• Automated Model Deployment Pipeline - CI/CD for ML models
+
+CERTIFICATIONS
+• AWS Certified Machine Learning Specialist
+• TensorFlow Developer Certificate
+• Professional Scrum Master (PSM I)
+
+PUBLICATIONS
+• "Attention-based Models for Text Classification" - ICML 2020
+• "Scalable Deep Learning in Production" - NeurIPS Workshop 2019
