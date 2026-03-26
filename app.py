@@ -7,9 +7,11 @@ import pandas as pd
 import io
 import json
 import re
+import hashlib
 from typing import List, Dict, Any
 import sys
 import os
+from datetime import datetime, timedelta
 
 # File processing imports (for resume upload)
 PDF_AVAILABLE = False
@@ -480,6 +482,148 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+class Authentication:
+    """Authentication system for the application."""
+    
+    def __init__(self):
+        # Default users (username: hashed_password)
+        self.users = {
+            "admin": self._hash_password("admin123"),
+            "user": self._hash_password("user123"),
+            "demo": self._hash_password("demo123")
+        }
+    
+    def _hash_password(self, password: str) -> str:
+        """Hash password using SHA-256."""
+        return hashlib.sha256(password.encode()).hexdigest()
+    
+    def verify_password(self, password: str, hashed_password: str) -> bool:
+        """Verify password against hash."""
+        return self._hash_password(password) == hashed_password
+    
+    def authenticate(self, username: str, password: str) -> bool:
+        """Authenticate user credentials."""
+        if username in self.users:
+            return self.verify_password(password, self.users[username])
+        return False
+    
+    def is_authenticated(self) -> bool:
+        """Check if user is authenticated."""
+        return st.session_state.get('authenticated', False)
+    
+    def get_current_user(self) -> str:
+        """Get current authenticated username."""
+        return st.session_state.get('username', '')
+    
+    def login(self, username: str, password: str) -> bool:
+        """Login user."""
+        if self.authenticate(username, password):
+            st.session_state.authenticated = True
+            st.session_state.username = username
+            st.session_state.login_time = datetime.now()
+            return True
+        return False
+    
+    def logout(self):
+        """Logout user."""
+        st.session_state.authenticated = False
+        st.session_state.username = ''
+        st.session_state.login_time = None
+        # Clear other session data
+        for key in list(st.session_state.keys()):
+            if key not in ['authenticated', 'username', 'login_time']:
+                del st.session_state[key]
+    
+    def show_login_page(self):
+        """Display login page."""
+        st.markdown("""
+        <style>
+            .login-container {
+                max-width: 400px;
+                margin: 100px auto;
+                padding: 30px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #dc3545 0%, #c62828 50%, #8b0000 100%);
+                box-shadow: 0 8px 32px rgba(220, 53, 69, 0.3);
+                color: white;
+                text-align: center;
+            }
+            .login-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+                font-weight: bold;
+            }
+            .login-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+                opacity: 0.9;
+            }
+            .login-input {
+                margin-bottom: 20px;
+            }
+            .login-button {
+                background: white;
+                color: #dc3545;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                width: 100%;
+            }
+            .demo-credentials {
+                margin-top: 30px;
+                padding: 15px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+                font-size: 0.8rem;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="login-container">
+            <div class="login-title">🔐 HireSense AI</div>
+            <div class="login-subtitle">AI-Powered Resume Ranking System</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            username = st.text_input("👤 Username", key="login_username")
+            password = st.text_input("🔑 Password", type="password", key="login_password")
+            
+            if st.button("🚀 Login", use_container_width=True):
+                if username and password:
+                    if self.login(username, password):
+                        st.success(f"✅ Welcome back, {username}!")
+                        st.rerun()
+                    else:
+                        st.error("❌ Invalid username or password")
+                else:
+                    st.error("❌ Please enter both username and password")
+            
+            st.markdown("""
+            <div class="demo-credentials">
+                <strong>Demo Credentials:</strong><br>
+                📋 Username: demo<br>
+                🔑 Password: demo123<br>
+                <br>
+                <strong>Admin Access:</strong><br>
+                📋 Username: admin<br>
+                🔑 Password: admin123
+            </div>
+            """, unsafe_allow_html=True)
+    
+    def show_logout_button(self):
+        """Show logout button in sidebar."""
+        if st.sidebar.button("🚪 Logout", use_container_width=True):
+            self.logout()
+            st.rerun()
+
+
 class ResumeRankingApp:
     """Main application class for the resume ranking system."""
     
@@ -502,6 +646,19 @@ class ResumeRankingApp:
     
     def run(self):
         """Run the main application."""
+        
+        # Initialize authentication
+        auth = Authentication()
+        
+        # Check if user is authenticated
+        if not auth.is_authenticated():
+            auth.show_login_page()
+            return
+        
+        # Show user info in sidebar
+        st.sidebar.markdown("---")
+        st.sidebar.markdown(f"👤 **Logged in as:** {auth.get_current_user()}")
+        auth.show_logout_button()
         
         # Show landing page if first visit
         if st.session_state.show_landing:
