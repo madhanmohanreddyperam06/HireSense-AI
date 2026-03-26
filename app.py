@@ -1636,38 +1636,33 @@ class ResumeRankingApp:
         
         selected_candidate = st.session_state.candidates[selected_candidate_idx]
         
-        # Candidate overview
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.markdown("""
-            <div style='background: linear-gradient(135deg, #dc3545 0%, #c62828 50%, #8b0000 100%); 
-                        padding: 15px; border-radius: 8px; 
-                        color: white; text-align: center; 
-                        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);'>
-                <div style='font-size: 0.9rem; margin-bottom: 5px;'>Overall Score</div>
-                <div style='font-size: 1.8rem; font-weight: bold;'>{:.1f}/100</div>
+        # Candidate overview - Single complete bar (minimal)
+        st.markdown("""
+        <div style='background: linear-gradient(135deg, #dc3545 0%, #c62828 50%, #8b0000 100%); 
+                    padding: 8px; border-radius: 6px; 
+                    color: white; text-align: center; 
+                    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+                    margin-bottom: 15px;'>
+            <div style='display: flex; justify-content: space-between; align-items: center;'>
+                <div style='text-align: center; flex: 1;'>
+                    <div style='font-size: 0.7rem; margin-bottom: 4px; opacity: 0.8;'>Overall Score</div>
+                    <div style='font-size: 1.2rem; font-weight: bold;'>{:.1f}/100</div>
+                </div>
+                <div style='text-align: center; flex: 1;'>
+                    <div style='font-size: 0.7rem; margin-bottom: 4px; opacity: 0.8;'>Skill Coverage</div>
+                    <div style='font-size: 1.2rem; font-weight: bold;'>{:.1f}%</div>
+                </div>
+                <div style='text-align: center; flex: 1;'>
+                    <div style='font-size: 0.7rem; margin-bottom: 4px; opacity: 0.8;'>Experience</div>
+                    <div style='font-size: 1.2rem; font-weight: bold;'>{:.1f} years</div>
+                </div>
             </div>
-            """.format(selected_candidate['final_score']), unsafe_allow_html=True)
-        with col2:
-            st.markdown("""
-            <div style='background: linear-gradient(135deg, #dc3545 0%, #c62828 50%, #8b0000 100%); 
-                        padding: 15px; border-radius: 8px; 
-                        color: white; text-align: center; 
-                        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);'>
-                <div style='font-size: 0.9rem; margin-bottom: 5px;'>Skill Coverage</div>
-                <div style='font-size: 1.8rem; font-weight: bold;'>{:.1f}%</div>
-            </div>
-            """.format(selected_candidate['skill_coverage']['overall_coverage']), unsafe_allow_html=True)
-        with col3:
-            st.markdown("""
-            <div style='background: linear-gradient(135deg, #dc3545 0%, #c62828 50%, #8b0000 100%); 
-                        padding: 15px; border-radius: 8px; 
-                        color: white; text-align: center; 
-                        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);'>
-                <div style='font-size: 0.9rem; margin-bottom: 5px;'>Experience</div>
-                <div style='font-size: 1.8rem; font-weight: bold;'>{:.1f} years</div>
-            </div>
-            """.format(selected_candidate['years_of_experience']), unsafe_allow_html=True)
+        </div>
+        """.format(
+            selected_candidate['final_score'],
+            selected_candidate['skill_coverage']['overall_coverage'],
+            selected_candidate['years_of_experience']
+        ), unsafe_allow_html=True)
         
         # Score breakdown
         st.subheader("📊 Score Breakdown")
@@ -1721,37 +1716,37 @@ class ResumeRankingApp:
             <style>
                 .bias-metric {
                     background: linear-gradient(135deg, #dc3545 0%, #c62828 50%, #8b0000 100%);
-                    padding: 20px;
-                    border-radius: 10px;
+                    padding: 12px;
+                    border-radius: 6px;
                     color: white;
                     text-align: center;
-                    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
-                    margin-bottom: 15px;
+                    box-shadow: 0 3px 12px rgba(220, 53, 69, 0.3);
+                    margin-bottom: 10px;
                 }
                 .bias-label {
-                    font-size: 0.9rem;
-                    margin-bottom: 8px;
+                    font-size: 0.8rem;
+                    margin-bottom: 5px;
                     opacity: 0.9;
                 }
                 .bias-value {
-                    font-size: 1.8rem;
+                    font-size: 1.4rem;
                     font-weight: bold;
                 }
                 .bias-issues {
                     background-color: #000000;
-                    padding: 20px;
-                    border-radius: 8px;
+                    padding: 15px;
+                    border-radius: 6px;
                     border-left: 4px solid #dc3545;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-                    margin-top: 15px;
+                    margin-top: 10px;
                 }
                 .bias-recommendations {
                     background-color: #000000;
-                    padding: 20px;
-                    border-radius: 8px;
+                    padding: 15px;
+                    border-radius: 6px;
                     border-left: 4px solid #28a745;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-                    margin-top: 15px;
+                    margin-top: 10px;
                 }
             </style>
             """, unsafe_allow_html=True)
