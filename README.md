@@ -1,4 +1,4 @@
-# 🤖 AI-Powered Resume Intelligence & Ranking System
+# 🤖 HireSense AI - AI-Powered Resume Intelligence & Ranking System
 
 An intelligent recruitment automation tool that ranks resumes against job descriptions using BERT embeddings, skill ontology mapping, bias detection, and explainable AI.
 
@@ -14,7 +14,7 @@ An intelligent recruitment automation tool that ranks resumes against job descri
 
 ## 🏗️ System Architecture
 
-```
+```text
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   Resume Upload │───▶│  Text Extraction │───▶│  NLP Processing │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
@@ -34,6 +34,7 @@ An intelligent recruitment automation tool that ranks resumes against job descri
 ## 🛠️ Technology Stack
 
 ### Backend
+
 - **Python 3.10+**
 - **sentence-transformers**: BERT embeddings
 - **scikit-learn**: Machine learning utilities
@@ -45,29 +46,34 @@ An intelligent recruitment automation tool that ranks resumes against job descri
 - **textstat**: Readability analysis
 
 ### Frontend
+
 - **Streamlit**: Web application framework
 - **Plotly**: Interactive visualizations
 
 ## 📦 Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone <repository-url>
 cd "AI Powered Resume Ranking Tool"
 ```
 
-2. **Create virtual environment**
+1. **Create virtual environment**
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. **Install dependencies**
+1. **Install dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Download spaCy model**
+1. **Download spaCy model**
+
 ```bash
 python -m spacy download en_core_web_sm
 ```
@@ -91,6 +97,7 @@ The application will open in your browser at `http://localhost:8501`
 5. **Analyze Results**: Explore candidate insights, bias analysis, and comparisons
 
 ### Supported File Formats
+
 - **PDF**: `.pdf` files
 - **Microsoft Word**: `.docx` files
 
@@ -98,7 +105,7 @@ The application will open in your browser at `http://localhost:8501`
 
 The system uses a weighted scoring model:
 
-```
+```text
 Final Score = (0.6 × Semantic Similarity) 
             + (0.25 × Skill Match %) 
             + (0.1 × Experience Score) 
@@ -132,23 +139,27 @@ The system includes 10 skill categories:
 The system detects and flags:
 
 ### Types of Bias
+
 - **Gender Indicators**: Pronouns, gender-coded language
 - **Age Indicators**: Age-related terms, experience requirements
 - **Personal Attributes**: Marital status, family information
 - **Unnecessary Information**: Physical attributes, photos
 
 ### Bias Risk Levels
+
 - **Low (0-33)**: Minimal bias detected
 - **Medium (34-66)**: Some bias indicators present
 - **High (67-100)**: Significant bias detected
 
 ### Recommendations
+
 - **For Resumes**: Remove personal information, focus on professional qualifications
 - **For Job Descriptions**: Use inclusive language, avoid discriminatory requirements
 
 ## 📈 Visualizations
 
 ### Available Charts
+
 - **Ranking Bar Chart**: Horizontal bar chart of candidate rankings
 - **Skill Radar Chart**: Spider chart comparing job requirements vs candidate skills
 - **Score Breakdown**: Stacked bar chart showing score components
@@ -159,24 +170,82 @@ The system detects and flags:
 
 ## 🔍 Explainable AI
 
-The system provides detailed explanations for:
+The system provides comprehensive explanations for every ranking decision using multiple AI explainability techniques:
 
 ### Why a Candidate Ranked Higher
-- Semantic similarity percentage
-- Strong skill categories
-- Matched required skills
-- Experience alignment
-- Education relevance
 
-### Score Breakdown
-- Individual component scores
-- Weight contributions
-- Areas of strength
-- Improvement opportunities
+#### **Semantic Analysis Breakdown**
+
+- **BERT Similarity Score**: Exact percentage match between resume and job description
+- **Key Phrase Matches**: Specific terms that contributed to similarity
+- **Context Relevance**: How well experience aligns with role requirements
+- **Industry Alignment**: Matching of industry-specific terminology
+
+#### **Skill Assessment Details**
+
+- **Strong Skill Categories**: Categories with 80%+ match rate
+- **Matched Required Skills**: Exact skills that fulfilled job requirements
+- **Skill Gap Analysis**: Missing skills and their impact on ranking
+- **Skill Weight Impact**: How each skill category affected final score
+
+#### **Experience & Education Analysis**
+
+- **Experience Alignment**: Years of experience vs. requirements
+- **Relevance Scoring**: How relevant the experience is to the role
+- **Education Match**: Degree relevance to field requirements
+- **Certification Impact**: Professional certifications and their value
+
+### Score Breakdown & Transparency
+
+#### **Component Contributions**
+
+- **Individual Component Scores**: Detailed breakdown of each scoring factor
+- **Weight Contributions**: How each weighted component affects final score
+- **Normalization Process**: How raw scores are normalized to 0-100 scale
+- **Ranking Algorithm**: Step-by-step explanation of ranking logic
+
+#### **Comparative Analysis**
+
+- **Peer Comparison**: How candidate scores against others
+- **Strength Areas**: Top-performing categories for each candidate
+- **Improvement Opportunities**: Specific areas for enhancement
+- **Decision Factors**: Key reasons for ranking position
+
+### Explainability Features
+
+#### **Interactive Explanations**
+
+- **Hover Details**: Additional information on hover over scores
+- **Drill-down Capability**: Click to explore detailed breakdowns
+- **Visual Indicators**: Color-coded strengths and weaknesses
+- **Progressive Disclosure**: Layered information access
+
+#### **Bias-Aware Explanations**
+
+- **Bias Impact Assessment**: How detected bias affected rankings
+- **Fairness Metrics**: Explanation of bias mitigation
+- **Objective Criteria**: Focus on professional qualifications
+- **Transparency Reports**: Full audit trail of decisions
+
+### Technical Implementation
+
+#### **Explainability Engine**
+
+- **SHAP Values**: Feature importance for ML models
+- **Attention Visualization**: BERT attention weights for text matching
+- **Rule-based Explanations**: Clear logic for scoring rules
+- **Hybrid Approach**: Combining ML and rule-based transparency
+
+#### **User-Friendly Format**
+
+- **Natural Language**: Plain English explanations
+- **Actionable Insights**: Specific recommendations for improvement
+- **Visual Aids**: Charts and graphs for better understanding
+- **Multi-level Detail**: Summary to detailed explanations
 
 ## 📁 Project Structure
 
-```
+```text
 AI Powered Resume Ranking Tool/
 ├── app.py                          # Main Streamlit application
 ├── requirements.txt                # Python dependencies
@@ -199,16 +268,22 @@ AI Powered Resume Ranking Tool/
 ## ⚙️ Configuration
 
 ### Scoring Weights
+
 Weights can be adjusted in the sidebar:
+
 - Semantic Similarity: 0.0 - 1.0
 - Skill Match: 0.0 - 1.0
 - Experience Score: 0.0 - 1.0
 - Education Relevance: 0.0 - 1.0
 
-*Note: Weights must sum to 1.0*
+#### Note
+
+Weights must sum to 1.0
 
 ### Skill Ontology
+
 Customize `data/skill_ontology.json` to:
+
 - Add new skill categories
 - Modify existing skills
 - Update category weights
@@ -216,6 +291,7 @@ Customize `data/skill_ontology.json` to:
 ## 🧪 Testing
 
 ### Example Usage
+
 ```python
 from src.scoring_engine import ScoringEngine
 from src.text_extractor import TextExtractor
@@ -235,16 +311,19 @@ candidate = scoring_engine.analyze_resume(resume_text, filename, job_analysis)
 ## 🚀 Production Considerations
 
 ### Performance Optimization
+
 - **Model Caching**: BERT model cached with Streamlit
 - **Batch Processing**: Multiple resumes processed efficiently
 - **Lazy Loading**: Components loaded on-demand
 
 ### Security
+
 - **File Validation**: Only PDF/DOCX files accepted
 - **Text Sanitization**: Input text cleaned and validated
 - **No Persistent Storage**: Data processed in memory only
 
 ### Scalability
+
 - **Modular Architecture**: Easy to extend and modify
 - **Component-based**: Independent modules for maintenance
 - **Configuration-driven**: Weights and ontology easily updated
@@ -265,30 +344,35 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ### Common Issues
 
-**Model Loading Error**
+#### Model Loading Error
+
 ```bash
 # Ensure stable internet connection for first-time model download
 pip install --upgrade sentence-transformers
 ```
 
-**PDF Extraction Issues**
+#### PDF Extraction Issues
+
 ```bash
 # Install additional dependencies if needed
 pip install pdfplumber
 ```
 
-**Memory Issues**
+#### Memory Issues
+
 ```bash
 # Reduce batch size in embedding_engine.py if needed
 # Or process fewer resumes at once
 ```
 
-**spaCy Model Not Found**
+#### spaCy Model Not Found
+
 ```bash
 python -m spacy download en_core_web_sm
 ```
 
 ### Performance Tips
+
 - Process resumes in batches of 10 or fewer
 - Use SSD for better I/O performance
 - Ensure sufficient RAM (8GB+ recommended)
@@ -296,10 +380,11 @@ python -m spacy download en_core_web_sm
 ## 📞 Support
 
 For issues and questions:
+
 1. Check the troubleshooting section
 2. Review the code documentation
 3. Create an issue in the repository
 
 ---
 
-**Built with ❤️ for ethical and transparent AI recruitment**
+### Built with ❤️ for ethical and transparent AI recruitment
