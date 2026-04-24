@@ -1,5 +1,12 @@
 # 🤖 HireSense AI - AI-Powered Resume Intelligence & Ranking System
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.29%2B-red)
+![BERT](https://img.shields.io/badge/BERT-Transformers-green)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange)
+![Plotly](https://img.shields.io/badge/Plotly-5.17%2B-yellow)
+![License](https://img.shields.io/badge/License-MIT-purple)
+
 An intelligent recruitment automation tool that ranks resumes against job descriptions using BERT embeddings, skill ontology mapping, bias detection, and explainable AI.
 
 ## 🎯 Features
@@ -384,6 +391,15 @@ For issues and questions:
 1. Check the troubleshooting section
 2. Review the code documentation
 3. Create an issue in the repository
+
+## 📞 Contact
+
+### Madhan Mohan Reddy
+
+- 📧 **Email**: [madhanmohanreddyperam06@gmail.com](mailto:madhanmohanreddyperam06@gmail.com)
+- 📱 **Mobile**: +91 9110395993
+- 💼 **LinkedIn**: [Add your LinkedIn profile URL]
+- 🐙 **GitHub**: [Add your GitHub profile URL]
 
 ---
 
